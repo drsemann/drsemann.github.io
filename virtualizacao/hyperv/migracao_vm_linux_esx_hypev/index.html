@@ -1516,17 +1516,17 @@
                   <h1>Migração VM Linux de ESX para Hyper-V (RHEL/Centos)</h1>
                 
                 <h2 id="remover-o-vmware-tools">Remover o VMware Tools</h2>
-<pre><code class="language-bash"># yum remove open-vm-tools
+<pre><code class="language-bash">yum remove open-vm-tools
 </code></pre>
 <h2 id="update-da-imagem-do-boot-para-hyperv">Update da imagem do boot para HyperV</h2>
 <h3 id="centos-5">Centos 5</h3>
-<pre><code class="language-bash"># mkinitrd -f -v --with=hid-base-hv --with=hid-hyperv --with=hv_utils --with=hv_vmbus --with=hv_storvsc --with=hv_netvsc /boot/initrd-$(uname -r).img $(uname -r)
+<pre><code class="language-bash">mkinitrd -f -v --with=hid-base-hv --with=hid-hyperv --with=hv_utils --with=hv_vmbus --with=hv_storvsc --with=hv_netvsc /boot/initrd-$(uname -r).img $(uname -r)
 </code></pre>
 <h3 id="centos-6">Centos 6</h3>
-<pre><code class="language-bash"># mkinitrd -f -v --with=hid-base-hv --with=hid-hyperv --with=hv_utils --with=hv_vmbus --with=hv_storvsc --with=hv_netvsc /boot/initramfs-$(uname -r).img $(uname -r)
+<pre><code class="language-bash">mkinitrd -f -v --with=hid-base-hv --with=hid-hyperv --with=hv_utils --with=hv_vmbus --with=hv_storvsc --with=hv_netvsc /boot/initramfs-$(uname -r).img $(uname -r)
 </code></pre>
 <h3 id="centos-7">Centos 7</h3>
-<pre><code class="language-bash"># mkinitrd -f -v --with=hid-hyperv --with=hv_utils --with=hv_vmbus --with=hv_storvsc --with=hv_netvsc /boot/initramfs-$(uname -r).img $(uname -r)
+<pre><code class="language-bash">mkinitrd -f -v --with=hid-hyperv --with=hv_utils --with=hv_vmbus --with=hv_storvsc --with=hv_netvsc /boot/initramfs-$(uname -r).img $(uname -r)
 </code></pre>
                 
               

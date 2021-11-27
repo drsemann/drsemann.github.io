@@ -1404,11 +1404,11 @@ LC_ALL=en_US.UTF-8
 <pre><code class="language-bash">deb http://download.proxmox.com/debian buster pve-no-subscription
 </code></pre>
 <p>Efetuar o update e upgrade do sistema:</p>
-<pre><code class="language-bash"># apt update -y
-# apt upgrade -y
+<pre><code class="language-bash">apt update -y
+apt upgrade -y
 </code></pre>
 <p>Instalar <strong>ifupdown2</strong> para que seja alterado as configurações de rede sem ser preciso reiniciar:</p>
-<pre><code class="language-bash"># apt install ifupdown2 -y
+<pre><code class="language-bash">apt install ifupdown2 -y
 </code></pre>
 <p>Remove aviso de falta de subscrição:</p>
 <pre><code class="language-bash">sed -Ezi.bak &quot;s/(Ext.Msg.show\(\{\s+title: gettext\('No valid sub)/void\(\{ \/\/\1/g&quot; /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js &amp;&amp; systemctl restart pveproxy.service
