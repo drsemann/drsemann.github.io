@@ -1553,18 +1553,18 @@
 <p class="admonition-title">Antes instalar o pacote ethtool!</p>
 </div>
 <p>Verificando se a placa suporta</p>
-<pre><code>ethtool &lt;interface&gt; | grep Wake-on
+<pre><code class="language-bash">ethtool &lt;interface&gt; | grep Wake-on
 </code></pre>
 <p>Deverá retorna algo com</p>
-<pre><code>Wake-on: d
+<pre><code class="language-bash">Wake-on: d
 </code></pre>
 <p>Caso esteja <em>g</em> já esta configurado, caso esteja com o exemplo acima execute:</p>
-<pre><code>ethtool -s &lt;interface&gt; wol g
+<pre><code class="language-bash">ethtool -s &lt;interface&gt; wol g
 </code></pre>
 <p>Cheque se foi alterado com o primeiro comando apresentado.</p>
 <p>Ele funcionara somente em um desligamento, pois quando inicializar retornara para o default <em>d</em>.</p>
 <p>Para que fique persistente, edite o arquivo /etc/network/interfaces e abaixo da interface que tem suporte adicionar a seguinte linha:</p>
-<pre><code>iface &lt;interface&gt; inet manual
+<pre><code class="language-bash">iface &lt;interface&gt; inet manual
           post-up /usr/sbin/ethtool -s &lt;interface&gt; wol g
 </code></pre>
 
